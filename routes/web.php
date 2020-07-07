@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return View::make('main')->nest('child', 'home');
+});
+
+Route::get('/new-report', function () {
+    return View::make('main')->nest('child', 'new-report');
+});
+
+Route::get('/reports', function () {
+    return View::make('main')->nest('child', 'reports');
 });
