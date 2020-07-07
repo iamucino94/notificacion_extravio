@@ -18,6 +18,13 @@ class CreateTiposObjetosTable extends Migration
             $table->timestamps();
             $table->string('nombre', 30);
         });
+
+        DB::table('tipos_objetos')->insert(
+            [
+                ['nombre' => 'Documento'],
+                ['nombre' => 'Objeto']
+            ]
+        );
     }
 
     /**

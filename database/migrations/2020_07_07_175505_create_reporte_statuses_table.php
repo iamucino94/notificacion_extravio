@@ -18,6 +18,14 @@ class CreateReporteStatusesTable extends Migration
             $table->timestamps();
             $table->string('nombre', 30);
         });
+
+        DB::table('reporte_statuses')->insert(
+            [
+                ['nombre' => 'Recibido'],
+                ['nombre' => 'Respondido'],
+                ['nombre' => 'Por corregir']
+            ]
+        );
     }
 
     /**
