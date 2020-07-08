@@ -20,10 +20,10 @@
                         <a class="nav-link" href="/">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/new-report">Generar reporte</a>
+                        <a class="nav-link" href="/report/create">Generar reporte</a>
                     </li>
                    <li class="nav-item">
-                        <a class="nav-link" href="/reports">Ver reportes</a>
+                        <a class="nav-link" href="/report">Ver reportes</a>
                     </li>
                 <ul>
             </div>

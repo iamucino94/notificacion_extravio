@@ -17,10 +17,4 @@ Route::get('/', function () {
     return View::make('main')->nest('child', 'home');
 });
 
-Route::get('/new-report', function () {
-    return View::make('main')->nest('child', 'new-report');
-});
-
-Route::get('/reports', function () {
-    return View::make('main')->nest('child', 'reports');
-});
+Route::resource('report', 'ReportController');
