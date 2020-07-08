@@ -8,6 +8,8 @@ class Reporte extends Model
 {
     protected $table = "reportes";
 
+    protected $fillable = ['fecha', 'descripcion'];
+
     public function propietario()
     {
         return $this->belongsTo('App\DatosPersonales', 'id_datos_personales');
@@ -21,6 +23,11 @@ class Reporte extends Model
     public function status()
     {
         return $this->belongsTo('App\ReporteStatus', 'id_status');
+    }
+
+    public function lugar()
+    {
+        return $this->belongsTo('App\Direccion', 'id_direccion');
     }
 
 }
