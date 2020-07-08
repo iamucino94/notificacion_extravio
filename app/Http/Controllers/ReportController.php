@@ -72,13 +72,13 @@ class ReportController extends Controller
 
     public function show($id)
     {
-        $report = \App\Reporte::where('id', $id);
+        $report = \App\Reporte::where('id', $id)->first();
         return \View::make('report-detail')->with("report", $report);
     }
 
     public function edit($id)
     {
-        $report = \App\Reporte::where('id', $id);
+        $report = \App\Reporte::where('id', $id)->first();
         return \View::make('report-detail')->with("report", $report);
     }
 
@@ -139,4 +139,20 @@ class ReportController extends Controller
         $report = \App\Reporte::findOrFail($id);
         $report->delete();
     }
+
+    public static function acceptReport($id)
+    {
+        $report = \App\Reporte::findOrFail($id);
+        $report->status()->associate(\App\ReporteStatus::where('id', 2)->first());
+        $report->update();
+        return back();
+    } 
+
+    public static function sendCorrection($id)
+    {
+        $report = \App\Reporte::findOrFail($id);
+        $report->status()->associate(\App\ReporteStatus::where('id', 3)->first());
+        $report->update();
+        return back();
+    } 
 }

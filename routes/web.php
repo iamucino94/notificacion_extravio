@@ -18,3 +18,11 @@ Route::get('/', function () {
 });
 
 Route::resource('report', 'ReportController');
+
+Route::get('/report/{id}/accept', function($id){
+    return \App\Http\Controllers\ReportController::acceptReport($id);
+});
+
+Route::get('/report/{id}/send_correction', function($id){
+    return \App\Http\Controllers\ReportController::sendCorrection($id);
+});
