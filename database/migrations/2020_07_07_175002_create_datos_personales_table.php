@@ -19,12 +19,13 @@ class CreateDatosPersonalesTable extends Migration
             $table->string('nombre', 30);
             $table->string('apellido_paterno', 30);
             $table->string('apellido_materno', 30);
-            $table->binary('identificacion', 30);
+            // $table->binary('identificacion');
             $table->unsignedBigInteger('id_direccion');
             $table->foreign('id_direccion')->references('id')->on('direcciones');
             $table->string('telefono', 30);
             $table->string('email', 30);
         });
+        DB::statement('ALTER TABLE datos_personales ADD identificacion LONGBLOB');
     }
 
     /**
